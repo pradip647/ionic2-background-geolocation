@@ -7,6 +7,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
+import { BackgroundMode } from '@ionic-native/background-mode';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Geolocation } from '@ionic-native/geolocation';
+import { LocationTrackerProvider } from '../providers/location-tracker/location-tracker';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +30,12 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BackgroundGeolocation,
+    BackgroundMode,
+    LocalNotifications,
+    Geolocation,
+    LocationTrackerProvider
   ]
 })
 export class AppModule {}
